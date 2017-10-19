@@ -21,6 +21,11 @@ a{
 /*nav开始*/
 .nav{
     background: #333;
+    height: 40px;
+}
+.main-nav{
+    overflow: hidden;
+    float: left;
 }
 .main-nav li{
     float: left;
@@ -34,4 +39,44 @@ a{
 .main-nav li span{
     color: #424242;
     margin:0 5px;
+}
+/*nav结束*/
+.wrapper{
+    width: 1226px;
+    margin: 0 auto;
+}
+/*user-info开始*/
+.user-info{
+    float: right;
+}
+.user-info li{
+    float: left;
+    line-height: 40px;
+}
+.user-info li a{
+    color: #b0b0b0;
+    font-size: 12px;
+}
+.user-info li span {
+    color: #424242;
+    margin: 0 5px;
+}
+.user-info i{
+    color: #b0b0b0;
+    font-size: 20px;
+    margin-right: 4px;
+}
+/*user-info结束*/
+.cart-mini{
+    padding-left: 20px;
+}
+/*.cart-mini {*/
+
+    /*color: #b0b0b0;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*display: block;*/
+}
+.cart-mini-num{
+    color:#b0b0b0;
 }
