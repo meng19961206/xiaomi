@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/*banner开始*/
+.banner {
+    height: 120px;
+}
+.banner a{
+    display: block;
+    height: 120px;
+    background: url("../img/banner.jpg") no-repeat center 0;
+}
+/*banner结束*/
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/*nav开始*/
+.nav{
+    background: #333;
+}
+.main-nav li{
+    float: left;
+    height: 40px;
+    line-height: 40px;
+}
+.main-nav li a{
+    color: #b0b0b0;
+    font-size: 12px;
+}
+.main-nav li span{
+    color: #424242;
+    margin:0 5px;
+}
