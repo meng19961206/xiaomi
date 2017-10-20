@@ -36,6 +36,9 @@ a{
     color: #b0b0b0;
     font-size: 12px;
 }
+.main-nav li:hover a,.user-info li:hover a{
+    color: #ffffff;
+}
 .main-nav li span{
     color: #424242;
     margin:0 5px;
@@ -62,21 +65,102 @@ a{
     margin: 0 5px;
 }
 .user-info i{
-    color: #b0b0b0;
     font-size: 20px;
     margin-right: 4px;
 }
+.user-info .cart-mini{
+    width: 120px;
+    height: 40px;
+    background: #424242;
+    text-align: center;
+    margin-left: 20px;
+    position: relative;
+}
+.user-info .cart-mini a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.user-info .cart-mini:hover{
+    background: #ffffff;
+}
+.user-info .cart-mini:hover a{
+    color: #ff6700;
+}
+.cart-box {
+    width: 300px;
+    height: 0px;
+    font-size: 12px;
+    line-height: 100px;
+    text-align: center;
+    position: absolute;
+    right: 0px;
+    top: 40px;
+    box-shadow: 0 0px 5px 1px rgba(0,0,0,0.1);
+    display: none;
+}
+.user-info .cart-mini:hover .cart-box{
+    display:block;
+    animation:show 0.3s ease-in forwards;
+}
+@keyframes show {
+    100%{
+        height: 100px;
+    }
+}
 /*user-info结束*/
-.cart-mini{
-    padding-left: 20px;
+.header{
+    height: 100px;
 }
-/*.cart-mini {*/
+.container{
+    width: 1226px;
+    height: 100px;
+    /*position: relative;*/
+    margin: 0 auto;
+}
+.logo{
+    width: 55px;
+    height: 55px;
+    display: block;
+    background: url("../img/mi-logo.png") no-repeat center center #ff6700;
+    /*position: absolute;*/
+    /*top: 50%;*/
+    /*margin-top: -27.5px;*/
+    position: relative;
+    margin-top: 22px;
+    float: left;
+}
+.logo a{
+    color:#000000;
+    font-size: 10px;
+    background: #ffffff;
+    /*position: absolute;*/
+    /*right:10px;*/
+    /*top:3px;*/
+    display: none;
+}
+.logo:hover a{
+    display: block;
+}
+.main-menu{
+    /*width: 600px;*/
+    height: 100px;
+   padding-left:240px;
+}
+.menu-item{
+    float: left;
+    line-height:100px;
+}
+.menu-item a{
+    color: #333;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding:0 10px;
+}
+.main-menu li:hover a{
+    color: #ff6700;
+}
 
-    /*color: #b0b0b0;*/
-    /*width: 100%;*/
-    /*height: 100%;*/
-    /*display: block;*/
-}
-.cart-mini-num{
-    color:#b0b0b0;
-}
+
