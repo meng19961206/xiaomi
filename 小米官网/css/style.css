@@ -110,12 +110,12 @@ a{
 }
 /*user-info结束*/
 .header{
-    height: 100px;
+    /*height: 100px;*/
+    position: relative;
 }
-.container{
+.wrapper{
     width: 1226px;
-    height: 100px;
-    /*position: relative;*/
+    /*height: 100px;*/
     margin: 0 auto;
 }
 .logo{
@@ -130,37 +130,54 @@ a{
     margin-top: 22px;
     float: left;
 }
-.logo a{
+.logo a {
     color:#000000;
     font-size: 10px;
-    background: #ffffff;
+    /*background: #ff6700;*/
+    display: block;
+    width: 55px;
+    height: 55px;
     /*position: absolute;*/
     /*right:10px;*/
     /*top:3px;*/
-    display: none;
+    /*display: none;*/
 }
-.logo:hover a{
-    display: block;
-}
+/*.logo:hover a{*/
+    /*display: block;*/
+/*}*/
 .main-menu{
     /*width: 600px;*/
-    height: 100px;
+    /*height: 100px;*/
    padding-left:240px;
 }
 .menu-item{
     float: left;
-    line-height:100px;
+    /*line-height:100px;*/
+    padding: 40px 10px;
 }
 .menu-item a{
     color: #333;
+    text-align: center;
     font-size: 16px;
     display: block;
     width: 100%;
     height: 100%;
-    padding:0 10px;
+    /*padding:40px 10px;*/
 }
 .main-menu li:hover a{
     color: #ff6700;
+}
+.sub-menu{
+    background: red;
+    position: absolute;
+    left: 0;
+    top: 100px;
+    width: 100%;
+}
+.sub-menu li{
+    float: left;
+    width:200px;
+
 }
 
 
