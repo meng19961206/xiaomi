@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            border: 0;
+        }
+
+        #container {
+            width: 680px;
+            height: 344px;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        #tab {
+            position: absolute;
+            right: 20px;
+            bottom: 10px;
+            z-index: 5;
+        }
+
+        #tab li {
+            width: 20px;
+            height: 20px;
+            background: #000;
+            color: #ffffff;
+            float: left;
+            margin-right: 5px;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+        }
+
+        #tab .selected {
+            background: orange;
+            color: #ffffff;
+        }
+
+        #arrow {
+            position: absolute;
+            left: 20px;
+            bottom: 10px;
+            z-index: 5;
+        }
+
+        #arrow span {
+            width: 20px;
+            height: 20px;
+            background: #000;
+            color: #ffffff;
+            float: left;
+            margin-right: 5px;
+            text-align: center;
+            line-height: 20px;
+            cursor: pointer;
+        }
+#content{
+    position: relative;
+}
+        #content img{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <ul id="tab">
+        <li class="selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div id="content">
+        <img src="../img/1.jpg" alt="" style="z-index:4">
+        <img src="../img/2.jpg" alt="" style="z-index:3">
+        <img src="../img/3.jpg" alt="" style="z-index:2">
+        <img src="../img/4.jpg" alt="" style="z-index:1">
+    </div>
+    <div id="arrow">
+        <span id="prev">&lt;</span>
+        <span id="next">&gt;</span>
+    </div>
+</div>
+<script src="jslib.js">
+</script>
+<script>
+    var oTab = document.getElementById('tab');
+    var aLi = oTab.getElementsByTagName('li');
+    var oContent = document.getElementById('content');
+    var aImg = oContent.getElementsByTagName('img');
+    var oPrev = document.getElementById('prev');
+    var oNext = document.getElementById('next');
+    var oArrow = document.getElementById('arrow')
+    var iIndex = 0;
+    var zIndex = 4;
+    for (var i = 0; i < aLi.length; i++) {
+        aLi[i].index = i;
+        aLi[i].onmouseover = function () {
+            iIndex = this.index;//保存最新的索引
+            changeImg();
+        }
+    }
+    oPrev.onclick = oNext.onclick = function () {
+        if (this === oPrev) {
+            iIndex--;
+            if (iIndex == -1){
+                iIndex = aImg.length - 1;
+            }
+    } else
+    {
+        iIndex++;
+        if (iIndex == aImg.length) {
+            iIndex = 0;
+        }
+    }
+    changeImg();
+    }
+    oPrev.onselecstart = oNext.onselectstart = function () {
+        return false;//阻止浏览器默认行为
+    }
+    function changeImg() {
+        for (var i = 0; i < aLi.length; i++) {
+            aLi[i].className = '';
+        }
+        aLi[iIndex].className = 'selected';
+        aImg[iIndex].style.opacity = 0;
+        aImg[iIndex].style.zIndex = ++zIndex;
+        oTab.style.zIndex = ++zIndex;
+        oArrow.style.zIndex = ++zIndex;
+        animate(aImg[iIndex], {
+            opacity: 100
+        })
+    }
+    setInterval(function () {
+        oNext.onclick();
+    }, 2000)
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    function factorial(n) {
+//        if(n<=1){
+//            return 1;
+//    }
+//    return factorial(n-1) * n;
+//    }
+//    console.log(factorial(4));
+//    var num=prompt('请输入数字:')
+//    var sum=0;
+//    for(var i=1;i<=num;i++){
+//        sum+=factorial(i);
+//    }
+//    console.log(sum);
+//
+//
+//
+//    var person=new Object();
+//    person.name='lisi';
+//    person.age=23;
+//    person.sex='男';
+//    person.sayHello=function () {
+//        alert('我的名字是'+this.name+',haha')
+//    }
+//
+    function collectDigits(str) {
+        var digits = '';
+        for (var i = 0; i < str.length; i++) {
+            var char = str.charAt(i);
+            if (!isNaN(char)) {
+                digits += char;
+            }
+        }
+        return digits;
+    }
+    console.log(collectDigits('22hauhf327hfih'))
+
+
+</script>
+</body>
+</html>

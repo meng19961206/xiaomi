@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul, ol{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        img{
+            border: 0;
+        }
+        #container{
+            width: 400px;
+            height: 200px;
+            margin: 50px auto;
+            position:relative;
+        }
+        #tab{
+            height: 25px;
+            border-bottom: 1px solid #000;
+        }
+        #tab li{
+            width: 10px;
+            height: 10px;
+            float: left;
+            background: #ccc;
+            margin-right: 5px;
+            background: #ff0000;
+            font-size:3px;
+        }
+        #content{
+            height: 174px;
+            background: #cccccc;
+        }
+        #tab .selected{
+            background: #000000;
+            color: #ffffff;
+        }
+        #content div{
+            display: none;
+        }
+        #content .selected{
+            display: block;
+        }
+        .paper{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <ul id="tab">
+        <div class="paper">
+        <li class="selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        </div>
+    </ul>
+    <div id="content">
+        <div class="selected"></div>
+        <div>002</div>
+        <div>003</div>
+    </div>
+</div>
+<script>
+    var oTab = document.getElementById('tab');
+    var aLi = oTab.getElementsByTagName('li');
+    var oContent = document.getElementById('content');
+    var aDiv = oContent.getElementsByTagName('div');
+    for(var i=0; i<aLi.length; i++){
+        aLi[i].index = i;
+        aLi[i].onclick = function () {
+            for(var i=0; i<aLi.length; i++){
+                aLi[i].className = '';
+                aDiv[i].className = '';
+            }
+            this.className = 'selected';
+            aDiv[this.index].className = 'selected';
+        };
+    }
+</script>
+</body>
+</html>
