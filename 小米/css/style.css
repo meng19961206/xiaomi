@@ -159,5 +159,9 @@ img {
     top: 0;
     margin-left:240px;
 }
+.con-nav li{
+    width: 204px;
+    height: 201px;
+}
 
 
