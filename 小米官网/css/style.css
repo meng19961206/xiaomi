@@ -45,6 +45,7 @@ a{
 }
 /*nav结束*/
 .wrapper{
+    position: relative;
     width: 1226px;
     margin: 0 auto;
 }
@@ -122,7 +123,7 @@ a{
     width: 55px;
     height: 55px;
     display: block;
-    background: url("../img/mi-logo.png") no-repeat center center #ff6700;
+    background: url("../../小米/img/mi-logo.png") no-repeat center center #ff6700;
     /*position: absolute;*/
     /*top: 50%;*/
     /*margin-top: -27.5px;*/
@@ -168,16 +169,26 @@ a{
     color: #ff6700;
 }
 .sub-menu{
-    background: red;
     position: absolute;
     left: 0;
     top: 100px;
     width: 100%;
+    /*display: none;*/
 }
-.sub-menu li{
-    float: left;
+.sub-menu img{
+    /*float: left;*/
     width:200px;
 
 }
+/*.sub-menu-one{*/
 
+/*}*/
+.container{
+    width: 1519.2px;
+    height: 230px;
+    background: #ff0000;
+    position: absolute;
+    left: 0;
+    top:0;
+}
 
