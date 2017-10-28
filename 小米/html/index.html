@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="../../小米/css/iconfont.css">
 </head>
 <body>
+<div class="banner">
+    <a href="#">
+    </a>
+</div>
 <div class="nav">
     <div class="wrapper">
         <ul class="main-nav">
@@ -69,9 +73,59 @@
             <a class="link-logo" href="#" title="小米官网"></a>
         </div>
         <div class="text">
-            <li>
+            <li class="text-first">
                 <a href="">小米手机</a>
-            </li>
+                <!--<ul class="container">-->
+                    <!--<li>-->
+                        <!--<p>新品</p>-->
+                        <!--<img src="../img/01.png" alt="">-->
+                        <!--<div class="con-a">-->
+                        <!--<a href="">小米Mix2</a>-->
+                        <!--</div>-->
+                       <!--<p>3299起</p>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<p>新品</p>-->
+                        <!--<img src="../img/02.png" alt="">-->
+                        <!--<div class="con-a">-->
+                        <!--<a href="">小米Mix2</a>-->
+                        <!--</div>-->
+                        <!--<span>3299起</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<p>新品</p>-->
+                        <!--<img src="../img/03.jpg" alt="">-->
+                        <!--<div class="con-a">-->
+                        <!--<a href="">小米Mix2</a>-->
+                        <!--</div>-->
+                        <!--<span>3299起</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<p>新品</p>-->
+                        <!--<img src="../img/04.png" alt="">-->
+                        <!--<div class="con-a">-->
+                        <!--<a href="">小米Mix2</a>-->
+                        <!--</div>-->
+                        <!--<span>3299起</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<p>新品</p>-->
+                        <!--<img src="../img/05.png" alt="">-->
+                        <!--<div class="con-a">-->
+                        <!--<a href="">小米Mix2</a>-->
+                        <!--</div>-->
+                        <!--<span>3299起</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<p>新品</p>-->
+                        <!--<img src="../img/06.jpg" alt="">-->
+                        <!--<div class="con-a">-->
+                        <!--</div>-->
+                        <!--<a href="">小米Mix2</a>-->
+                        <!--<span>3299起</span>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</li>-->
             <li>
                 <a href="">红米</a>
             </li>
@@ -115,20 +169,132 @@
         </div>
     </ul>
 </div>
-<div class="container">
-<ul class="con-nav">
+<div id="list">
+<div class="wrapper">
+    <div class="fix">
     <li>
-        <p>新品</p>
-        <img src="../img/01.png" alt="">
-        <a href="">小米mix2</a>
-
+        <a href="">手机 电话卡</a><span>&gt;</span>
     </li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
+    <li>
+        <a href="">笔记本</a><span>&gt;</span>
+    </li>
+    <li>
+        <a href="">电视 盒子</a><span>&gt;</span>
+    </li>
+    <li>
+        <a href="">路由器 智能硬件</a><span>&gt;</span>
+    </li>
+    <li>
+        <a href="">移动电源 电池 插线板</a><span>&gt;</span>
+    </li>
+    <li>
+        <a href="">耳机 音箱</a><span>&gt;</span>
+    </li>
+    <li>
+        <a href="">保护套 贴膜</a><span>&gt;</span>
+    </li>
+    <li>
+        <a href="">线材 支架 存储卡</a><span>&gt;</span>
+    </li>
+    <li>
+        <a href="">箱包 服饰 鞋 眼镜</a><span>&gt;</span>
+    </li>
+    <li>
+        <a href="">米兔 生活周边</a><span>&gt;</span>
+    </li>
+    </div>
+    <div id="lun">
+        <ul id="tab">
+            <li class="selected"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div id="content">
+            <img src="../img/lun1.jpg" alt=""class="selected">
+            <img src="../img/lun2.jpg" alt="">
+            <img src="../img/lun3.jpg" alt="">
+            <img src="../img/lun4.jpg" alt="">
+            <img src="../img/lun5.jpg" alt="">
+            <img src="../img/lun6.jpg" alt="">
+            <img src="../img/lun7.jpg" alt="">
+        </div>
+        <div id="arrow">
+            <span id="prev">&lt;</span>
+            <span id="next">&gt;</span>
+        </div>
+    </div>
+    </div>
+</div>
+<script>
+    var oTab = document.getElementById('tab');
+    var aLi = oTab.getElementsByTagName('li');
+    var oContent = document.getElementById('content');
+    var aImg = oContent.getElementsByTagName('img');
+    var oPrev = document.getElementById('prev');
+    var oNext = document.getElementById('next');
+    var iIndex = 0;
+    for (var i = 0; i < aLi.length; i++) {
+        aLi[i].index = i;
+        aLi[i].onmouseover = function () {
+            iIndex = this.index;
+            changeImg(this.index);
+        }
+    }
+    oPrev.onselecstart = oNext.onselectstart = function () {
+        return false;
+    }
+    function changeImg(idx) {
+        for (var i = 0; i < aLi.length; i++) {
+            aLi[i].className = '';
+            aImg[i].className = '';
+        }
+        aLi[idx].className = 'selected';
+        aImg[idx].className = 'selected';
+
+    }
+    oNext.onclick = function () {
+        iIndex++;
+        if (iIndex == aLi.length) {
+            iIndex = 0;
+        }
+        changeImg(iIndex);
+    }
+    oPrev.onclick = function () {
+        iIndex--;
+        if (iIndex < 0) {
+            iIndex = aLi.length - 1;
+        }
+        changeImg(iIndex);
+    }
+    setInterval(function () {
+        oNext.onclick();
+    }, 2000)
+</script>
+<div id="sub-row">
+    <div class="wrapper">
+        <ul class="clearfix">
+            <div class="one">
+                <li><a href=""><i class="iconfont icon-shouji"></i><br>选购手机</a></li>
+                <li><a href=""><i class="iconfont icon-tuangou-copy"></i><br>企业团购</a></li>
+                <li><a href=""><i class="iconfont icon-fma"></i><br>F码通道</a></li>
+    </div>
+            <div class="two">
+                <li><a href=""><i class="iconfont icon-shoujiqia"></i><br>米粉卡</a></li>
+                <li><a href=""><i class="iconfont icon-yijiuhuanxin"></i><br>以旧换新</a></li>
+                <li><a href=""><i class="iconfont icon-shenghuohuafeichongzhi"></i><br>话费充值</a></li>
+    </div>
+        </ul>
+        <!--<li class="first"><img src="../img/11.jpg" alt=""></li>-->
+        <!--<li class="second"><img src="../img/12.jpg" alt=""></li>-->
+        <!--<li class="third"><img src="../img/13.jpg" alt=""></li>-->
+        <img src="../img/11.jpg" alt="">
+        <img src="../img/12.jpg" alt="">
+        <img src="../img/13.jpg" alt="">
+    </div>
 </div>
 </body>
 </html>
